@@ -11,6 +11,7 @@ class GRAD_USER {
         class chairCircle {};
         class closingCredits {};
         class createVehicle {};
+        class createZone {};
         class createUnit {};
         class intro {};
         class outro {};

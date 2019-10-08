@@ -67,8 +67,8 @@ cutText ["","BLACK OUT", 1];
                                         [] call GRAD_USER_fnc_closingCredits;
 
                                         if (isServer) then {
-                                            private _chairs = [getPos firePlace, 5, "Land_CampingChair_V2_F"] call GRAD_USER_fnc_chairCircle;
-                                            [{[_this] call GRAD_USER_fnc_seatPlayers;}, _chairs] call CBA_fnc_execNextFrame;
+                                            private _chairs = [getPos firePlace, 5, "Land_CampingChair_V2_F", (count (playableUnits + switchableUnits)) + 3] call GRAD_USER_fnc_chairCircle;
+                                            [{[_this] call GRAD_USER_fnc_seatPlayers;}, _chairs, 1] call CBA_fnc_waitAndExecute;
                                         };
 
                                             [{

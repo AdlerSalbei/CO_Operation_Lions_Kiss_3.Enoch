@@ -7,14 +7,15 @@ grad_template_ratingEH = player addEventHandler ["HandleRating",{0}];
 
 
 ["CBA_loadingScreenDone", {
-    if (!(didJIP) || {(didJIP && !(isNil "GRAD_USER_introOver"))}) then {
-        [{time > (_this + 5)},{
+    [{time > ((_this select 0) + 5)},{
+        params ["", "_didJip"];
+        if (!(_didJip) || {(_didJip && !(isNil "GRAD_USER_introOver"))}) then {    
             if (isNull (getAssignedCuratorLogic player)) then {
                 STHud_UIMode = 0;
                 diwako_dui_main_toggled_off = true;
                 ["Mediterranean", "LeadTrack06_F_Tank"] call GRAD_USER_fnc_intro;
             };
-        },time] call CBA_fnc_waitUntilAndExecute;
-    };
+        };
+    }, [time, didJIP]] call CBA_fnc_waitUntilAndExecute;
 }] call CBA_fnc_addEventHandler;
 
