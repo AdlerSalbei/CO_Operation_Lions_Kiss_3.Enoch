@@ -18,8 +18,8 @@
 */
 
 
-loadoutFactionBlu = "SOGBlack";
-loadoutFactionOpf = "RuFlora";
+loadoutFactionBlu = "LDF";
+loadoutFactionOpf = "LivoniaRebels";
 loadoutFactionInd = "LivoniaRebels";
 
 // Achtung: grad-factions enthält derzeit keine Loadouts, die für Zivilisten funktionieren
