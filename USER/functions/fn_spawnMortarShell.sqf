@@ -13,12 +13,12 @@ _projectile call CBRN_fnc_handleProjectile;
 	},
 	{
 		private _pos = getPos _this;
-		private _detonator = "ClaymoreDirectionalMine_Remote_Ammo_Scripted_Fake" createVehicle [0,0,0];
+		private _detonator = "SLAMDirectionalMine_Wire_Ammo" createVehicle [0,0,0];
 		_detonator setPos _pos;
 		_detonator setDamage 1;
 		deleteVehicle _this;	
-
-		[_pos vectorAdd [0,0, 15], 15, 90, 2, (_pos # 2) / 2, 0.6] remoteExecCall ["grad_gas_fnc_spawnMist", -2];
 	},
 	_projectile
 ] call CBA_fnc_waitUntilAndExecute;
+
+

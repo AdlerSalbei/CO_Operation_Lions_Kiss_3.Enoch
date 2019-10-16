@@ -4,17 +4,26 @@ if (isServer) then {
 
         if (isNull  _objName) exitWith {};
 
-        [getPos _objName] call grad_gas_fnc_spawnMortarShell;
+        [getPos _objName] call grad_user_fnc_spawnMortarShell;
     };
+
+    [{
+        [getPos mortarSplash_1, 5, 100, 400] call grad_user_fnc_createZone;
+    }, [], 3] call CBA_fnc_waitAndExecute;
 };
+
+[{
+	[player, "forceWalk", "CBRN", true] call ace_common_fnc_statusEffect_set;
+}, [], 8] call CBA_fnc_waitAndExecute;
 
 [
     {
         private _bool = true;
         {
             if (
-                isNull (getAssignedCuratorLogic player) && 
-                {!(_x getVariable ["ACE_isUnconscious", false])}
+                /*isNull (getAssignedCuratorLogic player) && 
+                {!(_x getVariable ["ACE_isUnconscious", false])}*/
+                !(_x getVariable ["ACE_isUnconscious", false])
             ) exitWith {
                 _bool = false;
             };
@@ -29,11 +38,19 @@ if (isServer) then {
 
         playMusic ["outroMusic", 0];
         cutText ["","BLACK OUT", 1];
+        player allowDamage false;
+        player setVariable ["diwako_cbrn_stoppedAutoDamage", true];
+        [player, false] call ace_medical_fnc_setUnconscious;
+        [player, player] call ACE_medical_fnc_treatmentAdvanced_fullHealLocal;
+
+        private _anim = [player] call ace_common_fnc_getDeathAnim;
+        [player, _anim, 1, true] call ace_common_fnc_doAnimation;
 
         [{
             cutText ["","BLACK FADED", 999];
-            ace_player switchMove "amovpercmstpslowwrfldnon";
-            removeGoggles ace_player;
+            diwako_cbrn_mask_damage ppEffectAdjust [0, 0, true];
+            diwako_cbrn_mask_damage ppEffectCommit 0;
+
 
             [{
                 cutText ["","BLACK IN", 1];

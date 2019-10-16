@@ -18,6 +18,7 @@ class GRAD_USER {
         class pickUpItem {};
         class seatPlayers {};
         class setTimeAndWeather {};
+        class spawnMotarShell {};
         class unhidePickUp {};
     };
 };

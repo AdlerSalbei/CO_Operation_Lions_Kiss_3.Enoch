@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=4521;
+		nextID=4527;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7352.3701,275.17322,3897.8301};
-		dir[]={-0.14611202,-0.75072229,0.64426523};
-		up[]={-0.16603945,0.66061604,0.73213392};
-		aside[]={0.97524244,-1.7654384e-007,0.22117494};
+		pos[]={8155.2964,56.923946,10757.424};
+		dir[]={0.4899542,-0.66242057,0.56670332};
+		up[]={0.43323961,0.74912983,0.50110412};
+		aside[]={0.75647521,-1.9435538e-007,-0.65402573};
 	};
 };
 binarizationWanted=0;
@@ -4311,7 +4311,7 @@ class Mission
 		year=2019;
 		month=9;
 		day=23;
-		hour=6;
+		hour=12;
 		minute=-30;
 		startFogBase=-1000;
 		forecastFogBase=-1000;
@@ -4320,7 +4320,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=858;
+		items=860;
 		class Item0
 		{
 			dataType="Layer";
@@ -4994,7 +4994,7 @@ class Mission
 				};
 			};
 			id=729;
-			atlOffset=-169.66211;
+			atlOffset=-147.29233;
 		};
 		class Item2
 		{
@@ -46895,6 +46895,51 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item858
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8168.0952,43.87278,10768.899};
+				angles[]={0.11152653,0,0.016004669};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="mortarSplash_1";
+			};
+			id=4524;
+			type="HeliHEmpty";
+		};
+		class Item859
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8166.1392,43.992771,10767.915};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						isPlayer=1;
+					};
+					id=4526;
+					type="B_Soldier_F";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=4525;
 		};
 	};
 	class Connections
