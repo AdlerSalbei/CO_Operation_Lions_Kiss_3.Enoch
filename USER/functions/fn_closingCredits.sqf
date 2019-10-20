@@ -25,15 +25,15 @@ if (count _return > 1) then {
 };
 
 _text pushBack (_headerText + "Songs");
-_text pushBack (_bodyText + "Intro: Tanks DLC: Iron Gods");
-_text pushBack (_bodyText + "Outro: Two Steps from Hell - Victory");
+_text pushBack (_bodyText + "Intro: Two Steps from Hell - Never Back Down");
+_text pushBack (_bodyText + "Outro: Zack Hemsey - The Way");
 _text pushBack (_headerText + " ");
 
 _text pushBack (_headerText + "Dankesagung");
-_text pushBack (_bodyText + "Vielen Dank an Bohemia Interactiv für das grossartig Spiel");
-_text pushBack (_bodyText + "Vielen Dank an Odyssey, für die großartige Idee mit dem Audio Easter Egg.");
+_text pushBack (_bodyText + "Vielen Dank an Bohemia Interactiv für das großartig Spiel.");
+_text pushBack (_bodyText + "Vielen Dank an Timeout, für die großartigen Bauten.");
 _text pushBack (_headerText + " ");
-
+/*
 _text pushBack (_headerText + "Intel found");
 
 private _intelFound = [];
@@ -83,6 +83,7 @@ private _intelFound = [];
 }forEach _intelFound;
 
 _text pushBack (_headerText + " ");
+*/
 _text pushBack (_headerText + "Helden des Abends");
 
 _return = [];

@@ -12,13 +12,14 @@ class GRAD_USER {
         class closingCredits {};
         class createVehicle {};
         class createZone {};
+        class gasEffect {};
         class createUnit {};
         class intro {};
         class outro {};
         class pickUpItem {};
         class seatPlayers {};
         class setTimeAndWeather {};
-        class spawnMotarShell {};
+        class spawnMortarShell {};
         class unhidePickUp {};
     };
 };

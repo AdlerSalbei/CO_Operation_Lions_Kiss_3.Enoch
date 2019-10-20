@@ -117,9 +117,15 @@ class Loadouts {
 //MUSIC
 class CfgMusic
 {
+    class introMusic
+	{
+		name	= "introMusic";
+		sound[]	= { "data\Two_Steps_From_Hell_Never_Back_Down.ogg", db + 0, 1.0 };
+	};
+
 	class outroMusic
 	{
 		name	= "outroMusic";
-		sound[]	= { "data\Two_Steps_From_Hell_-_Victory.ogg", db + 0, 1.0 };
+		sound[]	= { "data\Zack_Hemsey_-_The_Way_Instrumental", db + 0, 1.0 };
 	};
 };
