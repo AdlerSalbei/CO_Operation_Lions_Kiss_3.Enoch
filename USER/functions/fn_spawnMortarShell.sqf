@@ -19,9 +19,11 @@ _projectile setVelocity [0,0,-100];
 		_detonator setDamage 1;
 		deleteVehicle _projectile;
 
-		[_obj] call grad_user_fnc_gasEffect;
+		[{
+            params ["_obj"];
 
-		//[{[_this] call grad_user_fnc_gasEffect;}, _obj, 0.2] call CBA_fnc_waitAndExecute; 
+            [_obj] remoteExecCall ["grad_user_fnc_gasEffect", 0, false];
+        }, _obj, random 3] call CBA_fnc_waitAndExecute;
 	},
 	[_projectile, _obj]
 ] call CBA_fnc_waitUntilAndExecute;

@@ -32,6 +32,7 @@ _text pushBack (_headerText + " ");
 _text pushBack (_headerText + "Dankesagung");
 _text pushBack (_bodyText + "Vielen Dank an Bohemia Interactiv für das großartig Spiel.");
 _text pushBack (_bodyText + "Vielen Dank an Timeout, für die großartigen Bauten.");
+_text pushBack (_bodyText + "Vielen Dank an Diwako, für das großartige CBRN Script.");
 _text pushBack (_headerText + " ");
 /*
 _text pushBack (_headerText + "Intel found");

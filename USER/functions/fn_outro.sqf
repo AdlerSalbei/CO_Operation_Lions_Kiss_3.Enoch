@@ -7,13 +7,18 @@ if (isServer) then {
         [{
             params ["_obj"];
             [_obj] call grad_user_fnc_spawnMortarShell;
-        }, _objName, random 3] call CBA_fnc_waitAndExecute;
+        }, _objName, random 5] call CBA_fnc_waitAndExecute;
     };
 
     [{
         [getPos mortarSplash_1, 5, 200, 300] call grad_user_fnc_createZone;
     }, [], 6] call CBA_fnc_waitAndExecute;
 };
+
+[{
+    [] call grad_user_fnc_breath;
+    playMusic ["outroMusic", 0];
+}, [], 6] call CBA_fnc_waitAndExecute;
 
 [{
     [player, "forceWalk", "CBRN", true] call ace_common_fnc_statusEffect_set;
@@ -24,9 +29,8 @@ if (isServer) then {
         private _bool = true;
         {
             if (
-                /*isNull (getAssignedCuratorLogic player) && 
-                {!(_x getVariable ["ACE_isUnconscious", false])}*/
-                !(_x getVariable ["ACE_isUnconscious", false])
+                isNull (getAssignedCuratorLogic _x) && 
+                {!(_x getVariable ["ACE_isUnconscious", false])}
             ) exitWith {
                 _bool = false;
             };
@@ -40,7 +44,6 @@ if (isServer) then {
         diwako_dui_main_toggled_off = true;
         grad_user_gasOut = true;
 
-        playMusic ["outroMusic", 0];
         cutText ["","BLACK OUT", 1];
         player allowDamage false;
         player setVariable ["diwako_cbrn_stoppedAutoDamage", true];
@@ -75,13 +78,12 @@ if (isServer) then {
                             [_chairs] call GRAD_USER_fnc_seatPlayers;
                         }, [_chairs], 1] call CBA_fnc_waitAndExecute;
                     };
-                    
-                    [{
+                ]{
                         cutText ["","BLACK IN", 1];
-                        10 fadeMusic 0.05;
+                            10 fadeMusic 0.05;
 
-                        [{
-                            5 fadeMusic 0;
+                             [{
+                                5 fadeMusic 0;
                         }, [], 10] call CBA_fnc_waitAndExecute;
                     }, [], 20] call CBA_fnc_waitAndExecute;
                 }, [], 12] call CBA_fnc_waitAndExecute;
